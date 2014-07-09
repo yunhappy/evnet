@@ -1,0 +1,14 @@
+PROJECT(common)
+
+AUX_SOURCE_DIRECTORY(src COMMON_SRC)
+INCLUDE_DIRECTORIES(include)
+
+ADD_DEFINITIONS(-g -Wall -Werror -O0 -std=c++0x -std=gnu++0x)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x" )
+SET(CMAKE_BUILD_TYPE Debug)
+SET(LIBRARY_OUTPUT_PATH ../libs/x64)
+
+INCLUDE_DIRECTORIES(../libutils)
+
+ADD_LIBRARY(common_static STATIC ${COMMON_SRC})
+TARGET_LINK_LIBRARIES(common_static libutils_static)

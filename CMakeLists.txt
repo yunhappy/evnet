@@ -10,5 +10,4 @@ SET(LIBRARY_OUTPUT_PATH ../libs/x64)
 
 INCLUDE_DIRECTORIES(../libutils)
 
-ADD_LIBRARY(common_static STATIC ${COMMON_SRC})
-TARGET_LINK_LIBRARIES(common_static libutils_static)
+ADD_LIBRARY(common STATIC ${COMMON_SRC})
